@@ -12,13 +12,24 @@ export default class ValuesService {
     //given the information you need in the controller, 
     //what methods will be required to support that functionality?
 
+    //NOTE Add a new task to our list
     addTask(newTask) {
         _state.lists.push(new List(newTask))
-        console.log(_state.lists)
+        //console.log(_state.lists)
     }
 
+    //NOTE Add a new item to a specific task in our list
     addItem(taskIndex, newItem) {
         _state.lists[taskIndex].item.push(newItem)
+    }
+
+    //NOTE Delete a item off of a specific task in our list
+    //NOTE Confirms with user to make sure they want to delete that item
+    deleteItem(taskIndex, itemIndex) {
+        let itemDelete = window.confirm("Are you sure you you want to delete that item?")
+        if (itemDelete == true) {
+            _state.lists[taskIndex].item.splice(itemIndex, 1)
+        }
     }
 
 

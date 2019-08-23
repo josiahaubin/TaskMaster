@@ -26,6 +26,7 @@ export default class ListController {
     }
 
     //TODO: Your app will need the ability to create, and delete both lists and listItems
+    //NOTE Let service know that the user wants to add a task
     addTask(event) {
         event.preventDefault()
 
@@ -38,6 +39,7 @@ export default class ListController {
         _listService.addTask(newTask)
         _drawLists()
     }
+    //NOTE  Let service know that the user wants to add a item to a task
     addItem(event, taskIndex) {
         event.preventDefault()
 
@@ -46,6 +48,11 @@ export default class ListController {
         let newItem = form.item.value
 
         _listService.addItem(taskIndex, newItem)
+        _drawLists()
+    }
+    //NOTE Let service know that the user wants to delete an item from the task
+    deleteItem(taskIndex, itemIndex) {
+        _listService.deleteItem(taskIndex, itemIndex)
         _drawLists()
     }
 }
