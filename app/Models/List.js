@@ -5,4 +5,17 @@ export default class List {
         this.task = data.task
         this.item = data.item
     }
+
+    getTemplate() {
+        let template = `
+
+        <div class="col-4 m-3">
+            <h1>${this.task}</h1>
+
+        </div>
+
+        `
+
+        return template
+    }
 }
