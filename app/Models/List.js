@@ -4,12 +4,14 @@ export default class List {
     constructor(data) {
         this.task = data.task
         this.item = data.item || []
+        this.color = data.color
     }
 
     getTemplate(index) {
         let template = `
 
-        <div class="col-4 m-3 border">
+        <div id="themeColor" class="col-4 m-3 border">
+            <input type="color" name="themeChange" id="theme" onchange="app.controllers.listController.changeTheme(event, ${index})">
             <h1>${this.task}</h1>
             <button type="button" class="btn btn-danger float-right taskDeleteButton" onclick="app.controllers.listController.deleteTask(${index})">X</button>
             <ul>
