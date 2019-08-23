@@ -22,10 +22,10 @@
         <div class="row justify-content-center mt-4">
             <div class="col-4">
                 <h4 class="mb-3">Create Task</h4>
-                <form>
+                <form onsubmit="app.controllers.listController.addTask(event)">
                     <div class="form-group">
                         <label for="task">Task Name</label>
-                        <input type="email" class="form-control" id="task" placeholder="Enter task name">
+                        <input type="text" class="form-control" id="task" placeholder="Enter task name" required>
                     </div>
                     <button type="submit" class="btn btn-success">Create Task</button>
                 </form>

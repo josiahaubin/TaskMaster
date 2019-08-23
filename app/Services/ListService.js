@@ -12,6 +12,11 @@ export default class ValuesService {
     //given the information you need in the controller, 
     //what methods will be required to support that functionality?
 
+    addTask(newTask) {
+        _state.lists.push(new List(newTask))
+        console.log(_state.lists)
+    }
+
 
     //NOTE returns copy of data
     get List() {
