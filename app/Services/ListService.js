@@ -13,6 +13,10 @@ export default class ValuesService {
     //what methods will be required to support that functionality?
 
 
+    //NOTE returns copy of data
+    get List() {
+        return _state.lists.map(list => new List(list))
+    }
 
 
     //NOTE You will need this code to persist your data into local storage, these methods should not require changing
