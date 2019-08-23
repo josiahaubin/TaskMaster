@@ -8,7 +8,9 @@ function _drawLists() {
     let template = ``
     let list = _listService.List
 
-    list.forEach(l => template += l.getTemplate())
+    list.forEach((list, index) => {
+        template += list.getTemplate(index)
+    })
 
     document.getElementById('tasks').innerHTML = template
 }
