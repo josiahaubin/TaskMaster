@@ -23,15 +23,23 @@ export default class ValuesService {
         _state.lists[taskIndex].item.push(newItem)
     }
 
+    //NOTE Delete task from list
+    //Confirms with user to make sure they want to delete that task
+    deleteTask(index) {
+        let taskDelete = window.confirm("Are you sure you want to delete that task?")
+        if (taskDelete == true) {
+            _state.lists.splice(index, 1)
+        }
+    }
+
     //NOTE Delete a item off of a specific task in our list
-    //NOTE Confirms with user to make sure they want to delete that item
+    //Confirms with user to make sure they want to delete that item
     deleteItem(taskIndex, itemIndex) {
-        let itemDelete = window.confirm("Are you sure you you want to delete that item?")
+        let itemDelete = window.confirm("Are you sure you want to delete that item?")
         if (itemDelete == true) {
             _state.lists[taskIndex].item.splice(itemIndex, 1)
         }
     }
-
 
     //NOTE returns copy of data
     get List() {

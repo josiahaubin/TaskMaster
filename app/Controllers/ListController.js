@@ -50,6 +50,11 @@ export default class ListController {
         _listService.addItem(taskIndex, newItem)
         _drawLists()
     }
+    //NOTE Let service know that the user wants to delete a task
+    deleteTask(index) {
+        _listService.deleteTask(index)
+        _drawLists()
+    }
     //NOTE Let service know that the user wants to delete an item from the task
     deleteItem(taskIndex, itemIndex) {
         _listService.deleteItem(taskIndex, itemIndex)

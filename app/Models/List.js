@@ -11,6 +11,7 @@ export default class List {
 
         <div class="col-4 m-3">
             <h1>${this.task}</h1>
+            <button type="button" class="btn btn-danger" onclick="app.controllers.listController.deleteTask(${index})">X</button>
             <ul>
             `
         template += this.drawItems(index)
