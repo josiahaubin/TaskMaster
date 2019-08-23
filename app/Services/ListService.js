@@ -11,16 +11,21 @@ export default class ValuesService {
     //TODO  Here is where we handle all of our data manipulation, 
     //given the information you need in the controller, 
     //what methods will be required to support that functionality?
+    constructor() {
+        this.getLists()
+    }
 
     //NOTE Add a new task to our list
     addTask(newTask) {
         _state.lists.push(new List(newTask))
         //console.log(_state.lists)
+        this.saveLists()
     }
 
     //NOTE Add a new item to a specific task in our list
     addItem(taskIndex, newItem) {
         _state.lists[taskIndex].item.push(newItem)
+        this.saveLists()
     }
 
     //NOTE Delete task from list
@@ -30,6 +35,7 @@ export default class ValuesService {
         if (taskDelete == true) {
             _state.lists.splice(index, 1)
         }
+        this.saveLists()
     }
 
     //NOTE Delete a item off of a specific task in our list
@@ -39,6 +45,7 @@ export default class ValuesService {
         if (itemDelete == true) {
             _state.lists[taskIndex].item.splice(itemIndex, 1)
         }
+        this.saveLists()
     }
 
     //NOTE returns copy of data
