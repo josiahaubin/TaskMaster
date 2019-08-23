@@ -17,6 +17,10 @@ export default class ValuesService {
         console.log(_state.lists)
     }
 
+    addItem(taskIndex, newItem) {
+        _state.lists[taskIndex].item.push(newItem)
+    }
+
 
     //NOTE returns copy of data
     get List() {
