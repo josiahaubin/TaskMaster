@@ -1,0 +1,15 @@
+.taskDeleteButton{
+  margin-top: -45px;
+}
+.itemAddButton{
+  margin-top: -55px;
+}
+.taskItemInput{
+  width: 85%;
+}
+hr {
+  border-color: black;
+}
+span {
+  color: red;
+}

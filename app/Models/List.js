@@ -9,9 +9,9 @@ export default class List {
     getTemplate(index) {
         let template = `
 
-        <div class="col-4 m-3">
+        <div class="col-4 m-3 border">
             <h1>${this.task}</h1>
-            <button type="button" class="btn btn-danger" onclick="app.controllers.listController.deleteTask(${index})">X</button>
+            <button type="button" class="btn btn-danger float-right taskDeleteButton" onclick="app.controllers.listController.deleteTask(${index})">X</button>
             <ul>
             `
         template += this.drawItems(index)
@@ -21,9 +21,9 @@ export default class List {
             <form onsubmit="app.controllers.listController.addItem(event, ${index})">
                 <div class="form-group">
                     <label for="item">Task Item</label>
-                    <input type="text" class="form-control" id="item" placeholder="Enter task item" required>
+                    <input type="text" class="form-control taskItemInput" id="item" placeholder="Enter task item" required>
                 </div>
-                <button type="submit" class="btn btn-success">+</button>
+                <button type="submit" class="btn btn-success float-right itemAddButton">+</button>
             </form>
         </div>
 
