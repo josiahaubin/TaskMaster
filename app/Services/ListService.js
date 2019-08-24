@@ -8,9 +8,6 @@ let _state = {
 
 //Public
 export default class ValuesService {
-    // changeTheme(index, newColor) {
-    //     _state.lists[index].color.push(newColor)
-    // }
     //TODO  Here is where we handle all of our data manipulation, 
     //given the information you need in the controller, 
     //what methods will be required to support that functionality?

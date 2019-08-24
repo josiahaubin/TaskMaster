@@ -15,13 +15,6 @@ function _drawLists() {
     document.getElementById('tasks').innerHTML = template
 }
 
-// function _drawColor() {
-//     let color = ""
-//     _listService.List.forEach((list, index) => {
-//         color = list[index].color
-//     })
-//     document.getElementById('themeColor').style.color = color
-// }
 
 
 //Public
@@ -68,17 +61,4 @@ export default class ListController {
         _listService.deleteItem(taskIndex, itemIndex)
         _drawLists()
     }
-
-    // changeTheme(event, index) {
-    //     event.preventDefault()
-    //     //debugger
-    //     let form = event.target
-
-    //     let newColor = {
-    //         color: form.value
-    //     }
-
-    //     _listService.changeTheme(index, newColor)
-    //     _drawColor()
-    // }
 }
