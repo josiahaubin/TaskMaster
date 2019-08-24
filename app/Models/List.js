@@ -10,7 +10,7 @@ export default class List {
     getTemplate(index) {
         let template = `
 
-        <div id="themeColor" class="col-4 m-3 border">
+        <div id="themeColor" class="col-4 m-3 border border-dark">
             <h1>${this.task}</h1>
             <button type="button" class="btn btn-danger float-right taskDeleteButton" onclick="app.controllers.listController.deleteTask(${index})">X</button>
             <ul>
