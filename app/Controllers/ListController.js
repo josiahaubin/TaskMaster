@@ -34,7 +34,8 @@ export default class ListController {
         let form = event.target
 
         let newTask = {
-            task: form.task.value
+            task: form.task.value,
+            color: form.themeColor.value
         }
 
         _listService.addTask(newTask)
