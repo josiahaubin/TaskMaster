@@ -9,8 +9,7 @@ export default class List {
 
     getTemplate(index) {
         let template = `
-
-        <div id="themeColor" class="col-4 m-3 border border-dark">
+        <div style="background-color: ${this.color};" class="col-4 m-3 border border-dark">
             <h1>${this.task}</h1>
             <button type="button" class="btn btn-danger float-right taskDeleteButton" onclick="app.controllers.listController.deleteTask(${index})">X</button>
             <ul>
@@ -36,7 +35,7 @@ export default class List {
     drawItems(taskIndex) {
         let itemTemplate = ``
         this.item.forEach((item, itemIndex) => {
-            itemTemplate += `<li>${item} <span onclick="app.controllers.listController.deleteItem(${taskIndex},${itemIndex})">X</span>`
+            itemTemplate += `<li>${item} <span style="cursor:pointer" onclick="app.controllers.listController.deleteItem(${taskIndex},${itemIndex})">X</span>`
         });
 
         return itemTemplate

@@ -1,4 +1,4 @@
-import List from "../models/List.js";
+import List from "../Models/List.js";
 
 //Private
 let _state = {
@@ -31,6 +31,7 @@ export default class ValuesService {
     //NOTE Delete task from list
     //Confirms with user to make sure they want to delete that task
     deleteTask(index) {
+        //NOTE this should be in the Controller
         let taskDelete = window.confirm("Are you sure you want to delete that task?")
         if (taskDelete == true) {
             _state.lists.splice(index, 1)
@@ -41,6 +42,7 @@ export default class ValuesService {
     //NOTE Delete a item off of a specific task in our list
     //Confirms with user to make sure they want to delete that item
     deleteItem(taskIndex, itemIndex) {
+        //NOTE this should be in the Controller
         let itemDelete = window.confirm("Are you sure you want to delete that item?")
         if (itemDelete == true) {
             _state.lists[taskIndex].item.splice(itemIndex, 1)
